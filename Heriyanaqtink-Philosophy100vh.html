@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Heriyanaqtink | Digital Builder</title>
+<meta name="description" content="Building Digital Assets, Systems & Infrastructure">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050505;--text:#fff;--muted:rgba(255,255,255,.7);--border:#222;--purple:#6D5DF6;--blue:#4F8CFF}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+#contact{scroll-margin-top:120px}
+
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;position:relative}
+body:before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+opacity:.08;
+background-image:
+radial-gradient(circle, rgba(255,255,255,.7) 0.5px, transparent 0.8px);
+background-size:4px 4px;
+}
+body:after{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+background:
+radial-gradient(circle at 22% 28%, rgba(79,140,255,.9) 0 1px, transparent 2px),
+radial-gradient(circle at 74% 34%, rgba(79,140,255,.9) 0 1px, transparent 2px),
+radial-gradient(circle at 38% 76%, rgba(79,140,255,.9) 0 1px, transparent 2px),
+radial-gradient(circle at 86% 82%, rgba(79,140,255,.9) 0 1px, transparent 2px),
+radial-gradient(circle at 20% 18%, rgba(79,140,255,.08), transparent 18%),
+radial-gradient(circle at 78% 72%, rgba(79,140,255,.06), transparent 20%);
+animation:gridBlink 6s ease-in-out infinite;
+opacity:.35;
+}
+@keyframes gridBlink{
+0%,100%{opacity:.15}
+50%{opacity:.45}
+}
+
+.container{max-width:1200px;margin:auto;padding:0 24px}
+nav{position:fixed;top:0;width:100%;height:72px;background:rgba(5,5,5,.75);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05);z-index:100}
+.nav-inner{height:72px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:"Space Grotesk";font-weight:700}
+.links{display:flex;gap:24px}
+.links a{color:#fff;text-decoration:none}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;padding-top:72px}
+h1,h2{font-family:"Space Grotesk",sans-serif}
+h1{font-size:clamp(2.8rem,5vw,4.8rem);line-height:1.02;max-width:11ch;letter-spacing:-0.03em;font-weight:700}
+p{color:var(--muted);line-height:1.8}
+.btn{display:inline-block;margin-top:24px;padding:14px 24px;border:1px solid var(--border);border-radius:12px;color:#fff;text-decoration:none}
+.section{padding:140px 0}
+.read{max-width:700px}
+.blueprint{height:520px;border:1px solid var(--border);border-radius:24px;position:relative;overflow:hidden;background:#070707}
+.blueprint:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#141414 1px,transparent 1px),linear-gradient(90deg,#141414 1px,transparent 1px);background-size:40px 40px}
+.aurora{position:absolute;width:450px;height:450px;background:radial-gradient(circle,var(--purple),transparent 70%);opacity:.15;filter:blur(50px);animation:float 20s linear infinite}
+.node{position:absolute;width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 12px var(--blue)}
+.line{position:absolute;height:1px;background:rgba(255,255,255,.15)}.data-flow{position:absolute;width:6px;height:6px;border-radius:50%;background:#4F8CFF;box-shadow:0 0 10px #4F8CFF}.flow-1{animation:flow1 8s linear infinite}.flow-2{animation:flow2 10s linear infinite}@keyframes flow1{from{left:15%}to{left:75%}}@keyframes flow2{from{left:25%}to{left:70%}}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:32px}
+.card{border:1px solid var(--border);padding:32px;border-radius:16px}
+.contact{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px;position:relative}.process-grid:before{content:'';position:absolute;left:0;right:0;top:26px;height:1px;background:#222}.process-step{position:relative}.process-number{width:52px;height:52px;border:1px solid #222;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#050505;font-size:13px;font-weight:600;margin-bottom:24px;position:relative;z-index:2}.process-step h3{margin-bottom:12px}
+footer{padding:40px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted)}
+@keyframes float{0%{transform:translate(-20%,0)}50%{transform:translate(40%,20%)}100%{transform:translate(-20%,0)}}
+@media(max-width:768px){
+.hero,.cards,.contact,.process-grid{grid-template-columns:1fr}.process-grid:before{display:none}.process-number{margin-bottom:16px}
+.links{display:none}
+h1{font-size:clamp(2.4rem,10vw,3.6rem);line-height:1.05;max-width:100%}
+.section{padding:100px 0}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="container nav-inner">
+<a href="#" class="logo" style="color:#fff;text-decoration:none">Heriyanaqtink</a>
+<div class="links">
+<a href="#philosophy" id="navPhilosophy">Philosophy</a>
+<a href="#build" id="navBuild"><span id="buildTitle">What I Build</span></a>
+<a href="#contact" id="navServices">Services</a>
+<a href="javascript:void(0)" id="langToggle">ID</a>
+</div>
+</div>
+</nav>
+
+<section class="container hero">
+<div>
+<h1><span id="heroTitle">Building Digital Assets, Systems & Infrastructure For Long-Term Business Growth.</span></h1>
+<p><span id="heroDesc">Designed to improve credibility, streamline operations, and build scalable digital foundations for long-term growth.</span></p>
+<a class="btn" href="https://wa.me/6285714659049" target="_blank"><span id="ctaTxt">Schedule a Consultation</span></a>
+</div>
+
+<div class="blueprint">
+<style>
+.eco-node{padding:10px 18px;border:1px solid #222;border-radius:12px;animation:glowcycle 12s infinite}
+.eco-node:nth-child(1){animation-delay:0s}
+.eco-node:nth-child(3){animation-delay:2.4s}
+.eco-node:nth-child(5){animation-delay:4.8s}
+.eco-node:nth-child(7){animation-delay:7.2s}
+.eco-node:nth-child(9){animation-delay:9.6s}
+.flow-dot{width:6px;height:6px;border-radius:50%;background:#4F8CFF;box-shadow:0 0 12px #4F8CFF;animation:pulseflow 2.4s infinite}
+@keyframes glowcycle{
+0%,80%,100%{border-color:#222;box-shadow:none}
+10%,30%{border-color:#4F8CFF;box-shadow:0 0 18px rgba(79,140,255,.45)}
+}
+@keyframes pulseflow{
+0%,100%{opacity:.2;transform:translateY(0)}
+50%{opacity:1;transform:translateY(6px)}
+}
+</style>
+<div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;font-family:Inter,sans-serif">
+<div class="eco-node">Website</div>
+<div class="flow-dot"></div>
+<div class="eco-node">Lead System</div>
+<div class="flow-dot"></div>
+<div class="eco-node">Knowledge Asset</div>
+<div class="flow-dot"></div>
+<div class="eco-node">Automation</div>
+<div class="flow-dot"></div>
+<div class="eco-node">Business Growth</div>
+</div>
+</div>
+</section>
+
+<section id="philosophy" class="section" style="padding-bottom:40px;min-height:100vh;display:flex;align-items:center">
+<div class="container read">
+<h2><span id="phTitle">Build Assets, Not Just Projects.</span></h2><br>
+<p id="phBody">Most businesses invest in websites, software, automation, and digital tools, yet many still struggle to create lasting value. Growth happens when digital assets, systems, knowledge, processes, automation, and infrastructure work together as a connected ecosystem. That is the principle behind every project I build.</p>
+</div>
+</section>
+
+<section id="build" class="section">
+<div class="container">
+<h2 id="buildHeading">What I Build</h2>
+<div class="cards">
+<div class="card"><h3><span id="card1">Digital Presence</span></h3></div>
+<div class="card"><h3><span id="card2">Digital Systems</span></h3></div>
+<div class="card"><h3><span id="card3">Knowledge Assets</span></h3></div>
+<div class="card"><h3><span id="card4">Digital Infrastructure</span></h3></div>
+</div>
+</div>
+</section>
+
+<section class="section" style="padding-top:40px">
+<div class="container">
+<h2 id="howTitle">How I Work</h2>
+<div class="process-grid">
+<div class="process-step"><div class="process-number">01</div><h3 id="step1Title">Discover</h3><p id="step1Desc">Understand goals, challenges, and opportunities before making decisions.</p></div>
+<div class="process-step"><div class="process-number">02</div><h3 id="step2Title">Design</h3><br><p id="step2Desc">Create the blueprint for digital assets, systems, and infrastructure.</p></div>
+<div class="process-step"><div class="process-number">03</div><h3 id="step3Title">Build</h3><br><p id="step3Desc">Develop websites, systems, automation, and digital foundations.</p></div>
+<div class="process-step"><div class="process-number">04</div><h3 id="step4Title">Grow</h3><br><p id="step4Desc">Improve, expand, and create long-term value through continuous optimization.</p></div>
+</div>
+</div>
+</section>
+
+<section id="contact" class="section">
+<div class="container">
+<div class="read">
+<h2><span id="servicesTitle">Services</span></h2><br>
+<p><span id="srv1">Website Development</span><br><span id="srv2">AI & Automation</span><br><span id="srv3">Digital Asset Systems</span><br><span id="srv4">Strategic Digital Infrastructure</span></p>
+</div>
+<br><br>
+<h2><span id="contactTitle" >Let's Build Your Digital Foundation.</span></h2><br>
+<div class="contact">
+<div class="card"><strong>WhatsApp</strong><br><br><a href="https://wa.me/6285714659049" style="color:white">+62 857 1465 9049</a></div>
+<div class="card"><strong>Email</strong><br><br><a href="mailto:qtinkheriyana41@gmail.com" style="color:white">qtinkheriyana41@gmail.com</a></div>
+</div>
+</div>
+</section>
+
+
+<footer>
+<span id="footerText">Heriyanaqtink · Digital Builder</span><br>
+<span id="footerSub">Building Digital Assets, Systems & Infrastructure.</span>
+</footer>
+
+
+<script>
+const t={
+en:{
+navPhilosophy:"Philosophy",
+navBuild:"What I Build",
+navServices:"Services",
+heroTitle:"Building Digital Assets, Systems & Infrastructure For Long-Term Business Growth.",
+heroDesc:"Designed to improve credibility, streamline operations, and build scalable digital foundations for long-term growth.",
+ctaTxt:"Schedule a Consultation",
+phTitle:"Build Assets, Not Just Projects.",
+phBody:"Most businesses invest in websites, software, automation, and digital tools, yet many still struggle to create lasting value. Growth happens when digital assets, systems, knowledge, processes, automation, and infrastructure work together as a connected ecosystem. That is the principle behind every project I build.",
+buildHeading:"What I Build",
+howTitle:"How I Work",
+step1Title:"Discover",
+step1Desc:"Understand goals, challenges, and opportunities before making decisions.",
+step2Title:"Design",
+step2Desc:"Create the blueprint for digital assets, systems, and infrastructure.",
+step3Title:"Build",
+step3Desc:"Develop websites, systems, automation, and digital foundations.",
+step4Title:"Grow",
+step4Desc:"Improve, expand, and create long-term value through continuous optimization.",
+card1:"Digital Presence",
+card2:"Digital Systems",
+card3:"Knowledge Assets",
+card4:"Digital Infrastructure",
+thinkTitle:"I Build Beyond Deliverables.",
+thinkBody:"Most projects end when the deliverable is completed. I focus on creating assets, systems, and infrastructure that continue generating value after the project is finished. The objective is not simply to launch a website. The objective is to create a stronger digital foundation for long‑term growth.",
+servicesTitle:"Services",
+contactTitle:"Let's Build Your Digital Foundation.",
+srv1:"Website Development",
+srv2:"AI & Automation",
+srv3:"Digital Asset Systems",
+srv4:"Strategic Digital Infrastructure",
+footerText:"Heriyanaqtink · Digital Builder",
+footerSub:"Building Digital Assets, Systems & Infrastructure."
+},
+id:{
+navPhilosophy:"Filosofi",
+navBuild:"Yang Saya Bangun",
+navServices:"Layanan",
+heroTitle:"Membangun Aset Digital, Sistem & Infrastruktur Untuk Pertumbuhan Bisnis Jangka Panjang.",
+heroDesc:"Dirancang untuk meningkatkan kredibilitas, menyederhanakan operasional, dan membangun fondasi digital yang skalabel untuk pertumbuhan jangka panjang.",
+ctaTxt:"Jadwalkan Konsultasi",
+phTitle:"Bangun Aset, Bukan Sekadar Proyek.",
+phBody:"Banyak bisnis berinvestasi pada website, software, otomasi, dan berbagai tools digital, namun masih kesulitan menciptakan nilai jangka panjang. Pertumbuhan terjadi ketika aset digital, sistem, pengetahuan, proses, otomasi, dan infrastruktur bekerja bersama sebagai satu ekosistem yang terhubung. Itulah prinsip yang mendasari setiap proyek yang saya bangun.",
+buildHeading:"Yang Saya Bangun",
+howTitle:"Cara Saya Bekerja",
+step1Title:"Discover",
+step1Desc:"Memahami tujuan, tantangan, dan peluang sebelum mengambil keputusan.",
+step2Title:"Design",
+step2Desc:"Merancang blueprint untuk aset digital, sistem, dan infrastruktur.",
+step3Title:"Build",
+step3Desc:"Membangun website, sistem, otomasi, dan fondasi digital.",
+step4Title:"Grow",
+step4Desc:"Meningkatkan, mengembangkan, dan menciptakan nilai jangka panjang melalui optimasi berkelanjutan.",
+card1:"Kehadiran Digital",
+card2:"Sistem Digital",
+card3:"Aset Pengetahuan",
+card4:"Infrastruktur Digital",
+thinkTitle:"Saya Membangun Lebih Dari Sekadar Deliverable.",
+thinkBody:"Sebagian besar proyek berakhir ketika deliverable selesai. Saya fokus membangun aset, sistem, dan infrastruktur yang terus menciptakan nilai setelah proyek selesai. Tujuannya bukan hanya meluncurkan website, tetapi membangun fondasi digital yang lebih kuat untuk pertumbuhan jangka panjang.",
+servicesTitle:"Layanan",
+contactTitle:"Mari Membangun Fondasi Digital Anda.",
+srv1:"Pengembangan Website",
+srv2:"AI & Otomasi",
+srv3:"Sistem Aset Digital",
+srv4:"Infrastruktur Digital Strategis",
+footerText:"Heriyanaqtink · Digital Builder",
+footerSub:"Membangun Aset Digital, Sistem & Infrastruktur."
+}
+};
+
+let lang='en';
+
+document.getElementById('langToggle').addEventListener('click',function(e){
+e.preventDefault();
+lang = lang === 'en' ? 'id' : 'en';
+this.textContent = lang === 'en' ? 'ID' : 'EN';
+
+Object.keys(t[lang]).forEach(function(key){
+const el = document.getElementById(key);
+if(el){ el.textContent = t[lang][key]; }
+});
+});
+</script></body>
+
+</html>
