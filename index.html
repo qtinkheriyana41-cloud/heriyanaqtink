@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heriyanaqtink - Digital Builder</title>
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#050816">
+
+ <link rel="icon" type="image/png" href="/assets/favicon.png">
+ <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+
+
+<meta name="description" content="Heriyanaqtink designs, builds, connects, and improves digital systems. Digital Builder specializing in digital assets, systems, knowledge infrastructure, and long-term digital value.">
+<meta property="og:title" content="Heriyanaqtink — Digital Builder">
+<meta property="og:description" content="Heriyanaqtink designs, builds, connects, and improves digital systems.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://heriyanaqtink.com">
+<meta property="og:image" content="https://heriyanaqtink.com/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Heriyanaqtink — Digital Builder">
+<meta name="twitter:description" content="Heriyanaqtink designs, builds, connects, and improves digital systems.">
+<meta name="twitter:image" content="https://heriyanaqtink.com/assets/og-image.jpg">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Heriyanaqtink",
+  "jobTitle": "Digital Builder",
+  "description": "Designs, builds, connects, and improves digital systems.",
+"image": "https://heriyanaqtink.com/assets/og-image.jpg",
+"email": "qtinkheriyana41@gmail.com",
+  "telephone": "+6285714659049"
+}
+</script>
+<style>
+:root {
+  --bg: #080A0E;
+  --surface: #0D1117;
+  --surface-1: #111820;
+  --surface-2: #161D28;
+  --border: rgba(255,255,255,0.06);
+  --border-hover: rgba(255,255,255,0.12);
+  --text-primary: #F0F2F5;
+  --text-secondary: #8B95A1;
+  --text-muted: #4A5568;
+  --accent: #4F8EF7;
+  --accent-dim: rgba(79,142,247,0.12);
+  --accent-glow: rgba(79,142,247,0.06);
+  --white: #FFFFFF;
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  --radius: 4px;
+  --radius-md: 8px;
+  --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+#philosophy, #what-i-build, #how-i-think, #services, #contact { scroll-margin-top: 60px; }
+
+.philosophy-inner,
+.build-inner,
+.think-inner,
+.services-inner,
+.contact-inner { padding-top: 4.5rem; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--accent-dim); color: var(--text-primary); }
+
+a { color: inherit; text-decoration: none; }
+
+img { display: block; max-width: 100%; }
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  z-index: 9999;
+  transition: top var(--transition);
+}
+.skip-link:focus { top: 1rem; }
+
+[data-lang="en"] [lang="id"],
+[data-lang="id"] [lang="en"] { display: none !important; }
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--surface-2); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ── NAVBAR ──────────────────────────────────────────────────────────── */
+#navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  background: rgba(8,10,14,0.85);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border-bottom: 1px solid var(--border);
+  transition: border-color var(--transition);
+}
+#navbar.scrolled { border-bottom-color: rgba(255,255,255,0.09); }
+
+.nav-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+.nav-logo-mark {
+  width: 24px; height: 24px;
+  display: block;
+  flex-shrink: 0;
+}
+.nav-logo-mark img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius);
+  transition: color var(--transition), background var(--transition);
+  letter-spacing: 0.01em;
+}
+.nav-links a:hover { color: var(--text-primary); background: rgba(255,255,255,0.04); }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2px;
+  gap: 0;
+}
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.625rem;
+  border-radius: 16px;
+  color: var(--text-muted);
+  transition: all var(--transition);
+  font-family: var(--font-mono);
+}
+.lang-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+.lang-btn:hover:not(.active) { color: var(--text-secondary); }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px; height: 36px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  padding: 0 9px;
+}
+.hamburger span {
+  display: block;
+  height: 1px;
+  background: var(--text-secondary);
+  border-radius: 1px;
+  transition: all var(--transition);
+}
+.hamburger[aria-expanded="true"] span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+.hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger[aria-expanded="true"] span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+
+#mobile-menu {
+  display: none;
+  position: fixed;
+  top: 60px; left: 0; right: 0;
+  background: rgba(8,10,14,0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 2rem;
+  z-index: 99;
+}
+#mobile-menu.open { display: block; }
+#mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 0.25rem; }
+#mobile-menu a {
+  display: block;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  padding: 0.625rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: color var(--transition);
+}
+#mobile-menu a:hover { color: var(--text-primary); }
+
+/* ── HERO ──────────────────────────────────────────────────────────── */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0;
+}
+
+#blueprint-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 7rem 2rem 5rem;
+  width: 100%;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.2s forwards;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 20px; height: 1px;
+  background: var(--accent);
+}
+
+.hero-title {
+  font-size: clamp(2.75rem, 6vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  max-width: 14ch;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.35s forwards;
+}
+.hero-title strong {
+  font-weight: 600;
+  color: var(--white);
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 300;
+  color: var(--text-secondary);
+  max-width: 48ch;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.5s forwards;
+  letter-spacing: -0.01em;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.65s forwards;
+}
+
+.hero-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  transition: border-color var(--transition), color var(--transition);
+}
+.hero-pill:hover { border-color: var(--border-hover); color: var(--text-primary); }
+.hero-pill-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2rem;
+  right: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  animation: fadeIn 1s ease 1.2s forwards;
+  z-index: 1;
+}
+.hero-scroll-line {
+  width: 40px; height: 1px;
+  background: var(--text-muted);
+}
+.hero-scroll span {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ── SECTIONS SHARED ──────────────────────────────────────────────── */
+.section {
+  padding: 7rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0 2rem;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-label::after {
+  content: '';
+  height: 1px;
+  width: 40px;
+  background: var(--accent);
+  opacity: 0.4;
+}
+
+/* ── PHILOSOPHY ──────────────────────────────────────────────────── */
+#philosophy {
+  background: var(--bg);
+}
+.philosophy-inner {
+  padding: 7rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+.philosophy-left {}
+.philosophy-headline {
+  font-size: clamp(1.875rem, 3.5vw, 3rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+.philosophy-headline strong { font-weight: 600; }
+.philosophy-body {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 44ch;
+}
+.philosophy-body p + p { margin-top: 1.25rem; }
+
+.philosophy-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.philosophy-principle {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  transition: background var(--transition);
+}
+.philosophy-principle:first-child { border-top: 1px solid var(--border); }
+.philosophy-num {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  padding-top: 0.1rem;
+}
+.philosophy-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.375rem;
+  letter-spacing: -0.01em;
+}
+.philosophy-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ── WHAT I BUILD ─────────────────────────────────────────────────── */
+#what-i-build {
+  background: var(--surface);
+}
+.build-inner {
+  padding: 7rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.build-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 2rem;
+}
+.build-headline {
+  font-size: clamp(1.875rem, 3.5vw, 3rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+.build-headline strong { font-weight: 600; }
+.build-intro {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.build-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.build-card {
+  background: var(--surface);
+  padding: 1.75rem;
+  transition: background var(--transition);
+  position: relative;
+}
+.build-card:hover { background: var(--surface-1); }
+.build-card-icon {
+  width: 40px; height: 40px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  background: var(--surface-2);
+  transition: border-color var(--transition);
+}
+.build-card:hover .build-card-icon { border-color: var(--border-hover); }
+.build-card-icon svg { color: var(--accent); }
+.build-card-title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.625rem;
+  letter-spacing: -0.01em;
+}
+.build-card-body {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.build-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+}
+
+/* ── HOW I THINK ─────────────────────────────────────────────────── */
+#how-i-think {
+  background: var(--bg);
+}
+.think-inner {
+  padding: 7rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.think-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+.think-headline {
+  font-size: clamp(1.875rem, 3.5vw, 3rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+.think-headline strong { font-weight: 600; }
+.think-body {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+.think-body p + p { margin-top: 1rem; }
+
+.think-principles {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.think-item {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.think-item:first-child { border-top: 1px solid var(--border); }
+.think-icon {
+  width: 36px; height: 36px;
+  flex-shrink: 0;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.125rem;
+}
+.think-icon svg { color: var(--accent); }
+.think-item-content {}
+.think-item-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.375rem;
+  letter-spacing: -0.01em;
+}
+.think-item-body {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* ── SERVICES ────────────────────────────────────────────────────── */
+#services {
+  background: var(--surface);
+}
+.services-inner {
+  padding: 7rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.services-header {
+  max-width: 640px;
+  margin-bottom: 2rem;
+}
+.services-headline {
+  font-size: clamp(1.875rem, 3.5vw, 3rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+.services-headline strong { font-weight: 600; }
+.services-intro {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.service-row {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  align-items: center;
+  transition: background var(--transition);
+}
+.service-row:last-child { border-bottom: none; }
+.service-row:hover { background: var(--surface-1); }
+.service-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+.service-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+.service-scope {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+/* ── CONTACT ─────────────────────────────────────────────────────── */
+#contact {
+  background: var(--bg);
+}
+.contact-inner {
+  padding: 7rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+.contact-headline {
+  font-size: clamp(1.875rem, 3.5vw, 3rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+.contact-headline strong { font-weight: 600; }
+.contact-body {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  transition: color var(--transition);
+  group: true;
+}
+.contact-link:first-child { border-top: 1px solid var(--border); }
+.contact-link:hover { color: var(--text-primary); }
+.contact-link-left {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+.contact-link-icon {
+  width: 32px; height: 32px;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color var(--transition);
+}
+.contact-link:hover .contact-link-icon { border-color: var(--border-hover); }
+.contact-link-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.contact-link-value {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.125rem;
+}
+.contact-arrow {
+  color: var(--text-muted);
+  transition: transform var(--transition), color var(--transition);
+}
+.contact-link:hover .contact-arrow {
+  transform: translate(3px, -3px);
+  color: var(--text-secondary);
+}
+
+.contact-note {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  padding: 1.5rem;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-top: 2rem;
+}
+.contact-note strong { color: var(--text-secondary); font-weight: 500; }
+
+/* ── FOOTER ─────────────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  padding: 2.5rem 2rem;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.footer-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: -0.01em;
+}
+.footer-sep {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+.footer-role {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+}
+.footer-right {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* ── REVEAL ANIMATIONS ──────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .philosophy-grid,
+  .think-layout,
+  .contact-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+  .build-header { grid-template-columns: 1fr; gap: 1.5rem; }
+  .build-grid { grid-template-columns: 1fr; }
+  .service-row { grid-template-columns: 1fr; gap: 0.5rem; }
+  .service-scope { text-align: left; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .section { padding: 4.5rem 1.25rem; }
+  .philosophy-inner,
+  .build-inner,
+  .think-inner,
+  .services-inner,
+  .contact-inner { padding: 3.5rem 1.25rem; }
+  .section-divider { margin: 0 1.25rem; }
+  .hero-inner { padding: 6rem 1.25rem 4rem; }
+  .hero-scroll { left: 1.25rem; }
+  #navbar { padding: 0 1.25rem; }
+  footer { padding: 2rem 1.25rem; }
+  .footer-inner { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+  .service-row { padding: 1.5rem; }
+  .build-card { padding: 2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#main" class="skip-link">Skip to main content</a>
+
+<!-- ── NAVBAR ── -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#" class="nav-logo" aria-label="Heriyanaqtink home">
+      <div class="nav-logo-mark" aria-hidden="true">
+        <img src="data:image/png;base64,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" alt="" width="24" height="24">
+      </div>
+      Heriyanaqtink
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#philosophy" lang="en">Philosophy</a><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#philosophy" lang="id">Filosofi</a></li>
+      <li><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#what-i-build" lang="en">What I Build</a><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#what-i-build" lang="id">Yang Saya Bangun</a></li>
+      <li><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#how-i-think" lang="en">How I Think</a><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#how-i-think" lang="id">Cara Berpikir</a></li>
+      <li><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#services" lang="en">Services</a><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#services" lang="id">Layanan</a></li>
+      <li><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#contact" lang="en">Contact</a><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#contact" lang="id">Kontak</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <button class="lang-btn active" id="btn-en" onclick="setLang(&#39;en&#39;)" aria-pressed="true">EN</button>
+        <button class="lang-btn" id="btn-id" onclick="setLang(&#39;id&#39;)" aria-pressed="false">ID</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <ul>
+    <li><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#philosophy" onclick="closeMobileMenu()" lang="en">Philosophy</a><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#philosophy" onclick="closeMobileMenu()" lang="id">Filosofi</a></li>
+    <li><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#what-i-build" onclick="closeMobileMenu()" lang="en">What I Build</a><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#what-i-build" onclick="closeMobileMenu()" lang="id">Yang Saya Bangun</a></li>
+    <li><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#how-i-think" onclick="closeMobileMenu()" lang="en">How I Think</a><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#how-i-think" onclick="closeMobileMenu()" lang="id">Cara Berpikir</a></li>
+    <li><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#services" onclick="closeMobileMenu()" lang="en">Services</a><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#services" onclick="closeMobileMenu()" lang="id">Layanan</a></li>
+    <li><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#contact" onclick="closeMobileMenu()" lang="en">Contact</a><a href="https://heriyanaqtink.qtinkheriyana41.workers.dev/#contact" onclick="closeMobileMenu()" lang="id">Kontak</a></li>
+  </ul>
+</div>
+
+<main id="main">
+
+<!-- ── HERO ── -->
+<section id="hero" aria-label="Hero">
+  <canvas id="blueprint-canvas" aria-hidden="true" width="1916" height="919" style="width: 1916px; height: 919px;"></canvas>
+  <div class="hero-inner">
+    <div class="hero-eyebrow" lang="en">Digital Builder</div>
+    <div class="hero-eyebrow" lang="id">Digital Builder</div>
+
+    <h1 class="hero-title" lang="en">
+      Building <strong>digital infrastructure</strong> that scales.
+    </h1>
+    <h1 class="hero-title" lang="id">
+      Membangun <strong>infrastruktur digital</strong> yang skalabel.
+    </h1>
+
+    <p class="hero-sub" lang="en">
+      Heriyanaqtink designs, builds, connects, and improves digital systems — with a focus on long-term value, operational efficiency, and structural clarity.
+    </p>
+    <p class="hero-sub" lang="id">
+      Heriyanaqtink merancang, membangun, menghubungkan, dan meningkatkan sistem digital — dengan fokus pada nilai jangka panjang, efisiensi operasional, dan kejelasan struktural.
+    </p>
+
+    <div class="hero-meta">
+      <div class="hero-pill" lang="en"><span class="hero-pill-dot"></span>Digital Assets</div>
+      <div class="hero-pill" lang="en"><span class="hero-pill-dot"></span>Digital Systems</div>
+      <div class="hero-pill" lang="en"><span class="hero-pill-dot"></span>Knowledge Assets</div>
+      <div class="hero-pill" lang="en"><span class="hero-pill-dot"></span>Digital Infrastructure</div>
+      <div class="hero-pill" lang="id"><span class="hero-pill-dot"></span>Aset Digital</div>
+      <div class="hero-pill" lang="id"><span class="hero-pill-dot"></span>Sistem Digital</div>
+      <div class="hero-pill" lang="id"><span class="hero-pill-dot"></span>Aset Pengetahuan</div>
+      <div class="hero-pill" lang="id"><span class="hero-pill-dot"></span>Infrastruktur Digital</div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span lang="en">Scroll to explore</span>
+    <span lang="id">Gulir ke bawah</span>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ── PHILOSOPHY ── -->
+<section id="philosophy" aria-labelledby="philosophy-heading">
+  <div class="philosophy-inner">
+    <div class="section-label" lang="en">Philosophy</div>
+    <div class="section-label" lang="id">Filosofi</div>
+    <div class="philosophy-grid">
+      <div class="philosophy-left reveal">
+        <h2 class="philosophy-headline" id="philosophy-heading" lang="en">
+          Systems outlast<br><strong>individual outputs.</strong>
+        </h2>
+        <h2 class="philosophy-headline" id="philosophy-heading-id" lang="id">
+          Sistem bertahan lebih lama<br>dari <strong>output individual.</strong>
+        </h2>
+        <div class="philosophy-body" lang="en">
+          <p>Most digital work produces deliverables. A deliverable is consumed once. A system is used continuously — and improves over time.</p>
+          <p>The distinction matters. Building a system requires a different kind of thinking: structural, architectural, long-term. It requires understanding how components connect, how information flows, and how decisions propagate through an organization.</p>
+          <p>This is the work. Not producing outputs, but designing the infrastructure that makes outputs inevitable.</p>
+        </div>
+        <div class="philosophy-body" lang="id">
+          <p>Sebagian besar pekerjaan digital menghasilkan deliverable. Deliverable dikonsumsi sekali. Sistem digunakan terus-menerus — dan berkembang seiring waktu.</p>
+          <p>Perbedaan ini penting. Membangun sistem membutuhkan cara berpikir yang berbeda: struktural, arsitektural, jangka panjang. Ini memerlukan pemahaman tentang bagaimana komponen terhubung, bagaimana informasi mengalir, dan bagaimana keputusan menyebar.</p>
+          <p>Inilah pekerjaannya. Bukan menghasilkan output, tapi merancang infrastruktur yang membuat output menjadi tak terelakkan.</p>
+        </div>
+      </div>
+
+      <div class="philosophy-right reveal">
+        <div class="philosophy-principle">
+          <div class="philosophy-num">01</div>
+          <div>
+            <div class="philosophy-title" lang="en">Infrastructure before execution</div>
+            <div class="philosophy-title" lang="id">Infrastruktur sebelum eksekusi</div>
+            <div class="philosophy-desc" lang="en">The quality of execution is determined by the quality of the infrastructure it runs on. Build the foundation first.</div>
+            <div class="philosophy-desc" lang="id">Kualitas eksekusi ditentukan oleh kualitas infrastruktur tempatnya berjalan. Bangun fondasi terlebih dahulu.</div>
+          </div>
+        </div>
+        <div class="philosophy-principle">
+          <div class="philosophy-num">02</div>
+          <div>
+            <div class="philosophy-title" lang="en">Assets over activities</div>
+            <div class="philosophy-title" lang="id">Aset di atas aktivitas</div>
+            <div class="philosophy-desc" lang="en">Every hour spent on an activity returns that hour once. Every hour spent building an asset returns value indefinitely.</div>
+            <div class="philosophy-desc" lang="id">Setiap jam yang dihabiskan untuk aktivitas mengembalikan nilai sekali. Setiap jam yang dihabiskan untuk membangun aset mengembalikan nilai tanpa batas.</div>
+          </div>
+        </div>
+        <div class="philosophy-principle">
+          <div class="philosophy-num">03</div>
+          <div>
+            <div class="philosophy-title" lang="en">Structural thinking</div>
+            <div class="philosophy-title" lang="id">Pemikiran struktural</div>
+            <div class="philosophy-desc" lang="en">Understand the structure before redesigning the surface. Most problems are structural, not aesthetic.</div>
+            <div class="philosophy-desc" lang="id">Pahami struktur sebelum mendesain ulang permukaan. Sebagian besar masalah bersifat struktural, bukan estetika.</div>
+          </div>
+        </div>
+        <div class="philosophy-principle">
+          <div class="philosophy-num">04</div>
+          <div>
+            <div class="philosophy-title" lang="en">Compounding by design</div>
+            <div class="philosophy-title" lang="id">Compounding by design</div>
+            <div class="philosophy-desc" lang="en">Digital systems can be designed to compound — where each iteration makes the next one faster, better, and more connected.</div>
+            <div class="philosophy-desc" lang="id">Sistem digital dapat dirancang untuk berkembang secara majemuk — di mana setiap iterasi membuat iterasi berikutnya lebih cepat, lebih baik, dan lebih terhubung.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ── WHAT I BUILD ── -->
+<section id="what-i-build" aria-labelledby="build-heading">
+  <div class="build-inner">
+    <div class="section-label" lang="en">What I Build</div>
+    <div class="section-label" lang="id">Yang Saya Bangun</div>
+    <div class="build-header reveal">
+      <h2 class="build-headline" id="build-heading" lang="en">Four categories.<br><strong>One coherent system.</strong></h2>
+      <h2 class="build-headline" id="build-heading-id" lang="id">Empat kategori.<br><strong>Satu sistem yang koheren.</strong></h2>
+      <p class="build-intro" lang="en">The work spans digital assets, systems, knowledge, and infrastructure. Each domain reinforces the others — building leverage through interconnection rather than isolated output.</p>
+      <p class="build-intro" lang="id">Pekerjaan mencakup aset digital, sistem, pengetahuan, dan infrastruktur. Setiap domain memperkuat yang lain — membangun leverage melalui interkoneksi, bukan output yang terisolasi.</p>
+    </div>
+
+    <div class="build-grid reveal">
+      <div class="build-card">
+        <div class="build-card-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><circle cx="12" cy="12" r="9" stroke-dasharray="2.2 3.2" stroke-width="1.25"></circle></svg>
+        </div>
+        <div class="build-card-title" lang="en">Digital Assets</div>
+        <div class="build-card-title" lang="id">Aset Digital</div>
+        <p class="build-card-body" lang="en">Owned digital properties that generate attention, credibility, or leverage without requiring continuous human effort. Websites, personal brand systems, content repositories, and digital presence architecture.</p>
+        <p class="build-card-body" lang="id">Properti digital yang dimiliki yang menghasilkan perhatian, kredibilitas, atau leverage tanpa memerlukan upaya manusia yang terus-menerus. Website, sistem personal brand, repositori konten, dan arsitektur kehadiran digital.</p>
+        <div class="build-card-tags">
+          <span class="tag">Web Properties</span>
+          <span class="tag">Brand Systems</span>
+          <span class="tag">Content Architecture</span>
+        </div>
+      </div>
+
+      <div class="build-card">
+        <div class="build-card-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 12L18 5M7 12L18 12M7 12L18 19"></path><circle cx="5" cy="12" r="2.25"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="19" cy="12" r="2"></circle><circle cx="19" cy="19" r="2"></circle></svg>
+        </div>
+        <div class="build-card-title" lang="en">Digital Systems</div>
+        <div class="build-card-title" lang="id">Sistem Digital</div>
+        <p class="build-card-body" lang="en">Structured workflows and operational architectures that reduce friction, improve decision quality, and scale without proportional effort. Systems designed to run reliably, not just once.</p>
+        <p class="build-card-body" lang="id">Alur kerja terstruktur dan arsitektur operasional yang mengurangi gesekan, meningkatkan kualitas keputusan, dan skalabel tanpa upaya proporsional. Sistem yang dirancang untuk berjalan dengan andal, bukan hanya sekali.</p>
+        <div class="build-card-tags">
+          <span class="tag">Workflow Design</span>
+          <span class="tag">Process Architecture</span>
+          <span class="tag">Automation</span>
+        </div>
+      </div>
+
+      <div class="build-card">
+        <div class="build-card-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="4.5" rx="1"></rect><rect x="3.5" y="10" width="17" height="4.5" rx="1"></rect><rect x="3.5" y="16.5" width="11" height="4.5" rx="1"></rect></svg>
+        </div>
+        <div class="build-card-title" lang="en">Knowledge Assets</div>
+        <div class="build-card-title" lang="id">Aset Pengetahuan</div>
+        <p class="build-card-body" lang="en">Structured knowledge systems that make expertise reusable, transferable, and scalable. Frameworks, documentation systems, decision models, and operational playbooks built to compound over time.</p>
+        <p class="build-card-body" lang="id">Sistem pengetahuan terstruktur yang membuat keahlian dapat digunakan kembali, ditransfer, dan diskalakan. Kerangka kerja, sistem dokumentasi, model keputusan, dan playbook operasional yang dirancang untuk berkembang seiring waktu.</p>
+        <div class="build-card-tags">
+          <span class="tag">Frameworks</span>
+          <span class="tag">Documentation</span>
+          <span class="tag">Decision Systems</span>
+        </div>
+      </div>
+
+      <div class="build-card">
+        <div class="build-card-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6.5" height="6.5" rx="1"></rect><rect x="14.5" y="3" width="6.5" height="6.5" rx="1"></rect><rect x="3" y="14.5" width="6.5" height="6.5" rx="1"></rect><rect x="14.5" y="14.5" width="6.5" height="6.5" rx="1"></rect><path d="M9.5 6.25h5M6.25 9.5v5M17.75 9.5v5M9.5 17.75h5" stroke-width="1.25" opacity="0.55"></path></svg>
+        </div>
+        <div class="build-card-title" lang="en">Digital Infrastructure</div>
+        <div class="build-card-title" lang="id">Infrastruktur Digital</div>
+        <p class="build-card-body" lang="en">The connective layer that holds everything together. Technical architecture, platform integration, deployment pipelines, and the structural decisions that determine long-term scalability and maintainability.</p>
+        <p class="build-card-body" lang="id">Lapisan penghubung yang menyatukan segalanya. Arsitektur teknis, integrasi platform, pipeline deployment, dan keputusan struktural yang menentukan skalabilitas dan pemeliharaan jangka panjang.</p>
+        <div class="build-card-tags">
+          <span class="tag">Technical Architecture</span>
+          <span class="tag">Integrations</span>
+          <span class="tag">Deployment</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ── HOW I THINK ── -->
+<section id="how-i-think" aria-labelledby="think-heading">
+  <div class="think-inner">
+    <div class="section-label" lang="en">How I Think</div>
+    <div class="section-label" lang="id">Cara Berpikir</div>
+    <div class="think-layout">
+      <div class="reveal">
+        <h2 class="think-headline" id="think-heading" lang="en">Thinking in<br><strong>systems, not tasks.</strong></h2>
+        <h2 class="think-headline" id="think-heading-id" lang="id">Berpikir dalam<br><strong>sistem, bukan tugas.</strong></h2>
+        <div class="think-body" lang="en">
+          <p>The most common mistake in digital work is optimizing at the wrong level. Fixing the output when the process is broken. Redesigning the interface when the information architecture is the problem.</p>
+          <p>Good systems thinking means identifying the right level before intervening — and having the discipline to address root causes rather than symptoms.</p>
+        </div>
+        <div class="think-body" lang="id">
+          <p>Kesalahan paling umum dalam pekerjaan digital adalah mengoptimalkan di level yang salah. Memperbaiki output saat prosesnya rusak. Mendesain ulang antarmuka saat arsitektur informasilah yang menjadi masalah.</p>
+          <p>Pemikiran sistem yang baik berarti mengidentifikasi level yang tepat sebelum melakukan intervensi — dan memiliki disiplin untuk menangani akar masalah, bukan gejalanya.</p>
+        </div>
+      </div>
+
+      <div class="think-principles reveal">
+        <div class="think-item">
+          <div class="think-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+          </div>
+          <div class="think-item-content">
+            <div class="think-item-title" lang="en">Diagnose before designing</div>
+            <div class="think-item-title" lang="id">Diagnosis sebelum mendesain</div>
+            <div class="think-item-body" lang="en">Every problem statement is a hypothesis. The first step is to verify it — and understand whether the real problem matches the stated one.</div>
+            <div class="think-item-body" lang="id">Setiap pernyataan masalah adalah hipotesis. Langkah pertama adalah memverifikasinya — dan memahami apakah masalah nyata sesuai dengan yang dinyatakan.</div>
+          </div>
+        </div>
+        <div class="think-item">
+          <div class="think-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+          </div>
+          <div class="think-item-content">
+            <div class="think-item-title" lang="en">Optimize for the repeating case</div>
+            <div class="think-item-title" lang="id">Optimalkan untuk kasus berulang</div>
+            <div class="think-item-body" lang="en">One-time tasks deserve efficient execution. Recurring tasks deserve systematic design. Most organizations confuse the two.</div>
+            <div class="think-item-body" lang="id">Tugas satu kali memerlukan eksekusi yang efisien. Tugas berulang memerlukan desain sistematis. Sebagian besar organisasi mengacaukan keduanya.</div>
+          </div>
+        </div>
+        <div class="think-item">
+          <div class="think-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+          </div>
+          <div class="think-item-content">
+            <div class="think-item-title" lang="en">Design for future maintainability</div>
+            <div class="think-item-title" lang="id">Desain untuk pemeliharaan masa depan</div>
+            <div class="think-item-body" lang="en">A system built for today will fail tomorrow. Every structural decision should anticipate change — without over-engineering for change that hasn't arrived.</div>
+            <div class="think-item-body" lang="id">Sistem yang dibangun untuk hari ini akan gagal esok hari. Setiap keputusan struktural harus mengantisipasi perubahan — tanpa over-engineering untuk perubahan yang belum datang.</div>
+          </div>
+        </div>
+        <div class="think-item">
+          <div class="think-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          </div>
+          <div class="think-item-content">
+            <div class="think-item-title" lang="en">Measure leverage, not activity</div>
+            <div class="think-item-title" lang="id">Ukur leverage, bukan aktivitas</div>
+            <div class="think-item-body" lang="en">Busy is not the same as productive. The right metric is leverage: the ratio between effort invested and value produced over time.</div>
+            <div class="think-item-body" lang="id">Sibuk bukan berarti produktif. Metrik yang tepat adalah leverage: rasio antara upaya yang diinvestasikan dan nilai yang dihasilkan seiring waktu.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ── SERVICES ── -->
+<section id="services" aria-labelledby="services-heading">
+  <div class="services-inner">
+    <div class="section-label" lang="en">Services</div>
+    <div class="section-label" lang="id">Layanan</div>
+    <div class="services-header reveal">
+      <h2 class="services-headline" id="services-heading" lang="en">Specific work.<br><strong>Systemic outcomes.</strong></h2>
+      <h2 class="services-headline" id="services-heading-id" lang="id">Pekerjaan spesifik.<br><strong>Hasil sistemik.</strong></h2>
+      <p class="services-intro" lang="en">Each engagement is scoped around a structural outcome — not a deliverable. The goal is to leave you with a better system, not just a completed task.</p>
+      <p class="services-intro" lang="id">Setiap keterlibatan dilingkup sekitar hasil struktural — bukan deliverable. Tujuannya adalah meninggalkan Anda dengan sistem yang lebih baik, bukan sekadar tugas yang selesai.</p>
+    </div>
+
+    <div class="services-list reveal">
+      <div class="service-row">
+        <div class="service-name" lang="en">Digital Headquarters</div>
+        <div class="service-name" lang="id">Markas Besar Digital</div>
+        <div class="service-desc" lang="en">Design and build of the complete digital presence system: web property, positioning architecture, brand infrastructure, and the technical layer that connects them.</div>
+        <div class="service-desc" lang="id">Desain dan pembangunan sistem kehadiran digital lengkap: properti web, arsitektur positioning, infrastruktur brand, dan lapisan teknis yang menghubungkannya.</div>
+        <div class="service-scope" lang="en">Foundation</div>
+        <div class="service-scope" lang="id">Fondasi</div>
+      </div>
+      <div class="service-row">
+        <div class="service-name" lang="en">System Architecture</div>
+        <div class="service-name" lang="id">Arsitektur Sistem</div>
+        <div class="service-desc" lang="en">Structural design of digital workflows, operational systems, and knowledge infrastructure. Built to reduce repetitive work and improve decision quality at every level.</div>
+        <div class="service-desc" lang="id">Desain struktural alur kerja digital, sistem operasional, dan infrastruktur pengetahuan. Dibangun untuk mengurangi pekerjaan berulang dan meningkatkan kualitas keputusan di setiap level.</div>
+        <div class="service-scope" lang="en">Core</div>
+        <div class="service-scope" lang="id">Inti</div>
+      </div>
+      <div class="service-row">
+        <div class="service-name" lang="en">Knowledge System Design</div>
+        <div class="service-name" lang="id">Desain Sistem Pengetahuan</div>
+        <div class="service-desc" lang="en">Converting operational knowledge into structured, reusable assets. Frameworks, playbooks, documentation systems, and decision models designed to compound in value.</div>
+        <div class="service-desc" lang="id">Mengubah pengetahuan operasional menjadi aset terstruktur yang dapat digunakan kembali. Kerangka kerja, playbook, sistem dokumentasi, dan model keputusan yang dirancang untuk bertumbuh nilainya.</div>
+        <div class="service-scope" lang="en">Leverage</div>
+        <div class="service-scope" lang="id">Leverage</div>
+      </div>
+      <div class="service-row">
+        <div class="service-name" lang="en">Infrastructure Review</div>
+        <div class="service-name" lang="id">Review Infrastruktur</div>
+        <div class="service-desc" lang="en">Structural audit of an existing digital system. Identify structural weaknesses, integration gaps, and scalability constraints — with a clear plan to address them.</div>
+        <div class="service-desc" lang="id">Audit struktural sistem digital yang ada. Identifikasi kelemahan struktural, kesenjangan integrasi, dan hambatan skalabilitas — dengan rencana yang jelas untuk mengatasinya.</div>
+        <div class="service-scope" lang="en">Diagnostic</div>
+        <div class="service-scope" lang="id">Diagnostik</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ── CONTACT ── -->
+<section id="contact" aria-labelledby="contact-heading">
+  <div class="contact-inner">
+    <div class="section-label" lang="en">Contact</div>
+    <div class="section-label" lang="id">Kontak</div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <h2 class="contact-headline" id="contact-heading" lang="en">Start with<br><strong>a clear problem.</strong></h2>
+        <h2 class="contact-headline" id="contact-heading-id" lang="id">Mulai dengan<br><strong>masalah yang jelas.</strong></h2>
+        <p class="contact-body" lang="en">The most productive conversations start with a well-defined problem, not a vague request. Before reaching out, it helps to know: what are you trying to improve, and what structural change would constitute success?</p>
+        <p class="contact-body" lang="id">Percakapan paling produktif dimulai dengan masalah yang terdefinisi dengan baik, bukan permintaan yang samar. Sebelum menghubungi, ada baiknya mengetahui: apa yang ingin Anda tingkatkan, dan perubahan struktural apa yang akan menjadi kesuksesan?</p>
+        <div class="contact-note" lang="en"><strong>Response time:</strong> Typically within 48 hours on business days. Initial conversations are diagnostic — focused on understanding the problem before discussing any engagement.</div>
+        <div class="contact-note" lang="id"><strong>Waktu respons:</strong> Biasanya dalam 48 jam pada hari kerja. Percakapan awal bersifat diagnostik — berfokus pada pemahaman masalah sebelum mendiskusikan keterlibatan apa pun.</div>
+      </div>
+
+      <div class="contact-links reveal">
+        <a href="mailto:qtinkheriyana41@gmail.com" class="contact-link">
+          <div class="contact-link-left">
+            <div class="contact-link-icon" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div>
+              <div class="contact-link-label">Email</div>
+              <div class="contact-link-value">qtinkheriyana41@gmail.com</div>
+            </div>
+          </div>
+          <svg class="contact-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
+        <a href="https://wa.me/6285714659049" class="contact-link" target="_blank" rel="noopener noreferrer">
+          <div class="contact-link-left">
+            <div class="contact-link-icon" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"></path></svg>
+            </div>
+            <div>
+              <div class="contact-link-label">WhatsApp</div>
+              <div class="contact-link-value">+62 857 1465 9049</div>
+            </div>
+          </div>
+          <svg class="contact-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span class="footer-name">Heriyanaqtink</span>
+      <span class="footer-sep">—</span>
+      <span class="footer-role">Digital Builder</span>
+    </div>
+    <div class="footer-right">Systems over tasks.</div>
+  </div>
+</footer>
+
+<script>
+(function() {
+
+/* ── LANGUAGE ──────────────────────────────────────────────────── */
+var LANG_KEY = 'hq_lang';
+
+function setLang(lang) {
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('lang', lang);
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-id').classList.toggle('active', lang === 'id');
+  document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
+  document.getElementById('btn-id').setAttribute('aria-pressed', lang === 'id');
+  try { localStorage.setItem(LANG_KEY, lang); } catch(e) {}
+}
+
+window.setLang = setLang;
+
+(function initLang() {
+  var saved;
+  try { saved = localStorage.getItem(LANG_KEY); } catch(e) {}
+  setLang(saved === 'id' ? 'id' : 'en');
+})();
+
+/* ── NAVBAR SCROLL ─────────────────────────────────────────────── */
+var navbar = document.getElementById('navbar');
+window.addEventListener('scroll', function() {
+  navbar.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+/* ── HAMBURGER ─────────────────────────────────────────────────── */
+var hamburger = document.getElementById('hamburger');
+var mobileMenu = document.getElementById('mobile-menu');
+
+hamburger.addEventListener('click', function() {
+  var open = mobileMenu.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', open);
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+    closeMobileMenu();
+  }
+});
+
+window.closeMobileMenu = function() {
+  mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+};
+
+/* ── SCROLL REVEAL ─────────────────────────────────────────────── */
+var reveals = document.querySelectorAll('.reveal');
+var revealObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(function(el) { revealObserver.observe(el); });
+
+/* ── INFRASTRUCTURE BLUEPRINT CANVAS ──────────────────────────── */
+(function() {
+  var canvas = document.getElementById('blueprint-canvas');
+  var hero = document.getElementById('hero');
+  if (!canvas) return;
+
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var W, H;
+  var offscreen, octx;
+  var ctx = canvas.getContext('2d');
+  var nodes = [];
+  var packets = [];
+  var aurora = [];
+  var animId;
+  var last = 0;
+  var visible = true;
+
+  var NODE_COUNT = 42;
+  var PACKET_COUNT = 18;
+  var CONNECT_DIST = 180;
+  var AURORA_COUNT = 3;
+
+  function resize() {
+    W = hero.offsetWidth;
+    H = hero.offsetHeight;
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    ctx.scale(dpr, dpr);
+    offscreen = document.createElement('canvas');
+    offscreen.width = W * dpr;
+    offscreen.height = H * dpr;
+    octx = offscreen.getContext('2d');
+    octx.scale(dpr, dpr);
+    init();
+  }
+
+  function rand(a, b) { return a + Math.random() * (b - a); }
+
+  function init() {
+    nodes = [];
+    for (var i = 0; i < NODE_COUNT; i++) {
+      nodes.push({
+        x: rand(0, W), y: rand(0, H),
+        vx: rand(-0.15, 0.15), vy: rand(-0.12, 0.12),
+        r: rand(1.5, 3.5),
+        pulse: rand(0, Math.PI * 2),
+        pulseSpeed: rand(0.008, 0.022),
+        active: Math.random() > 0.5
+      });
+    }
+
+    packets = [];
+    for (var j = 0; j < PACKET_COUNT; j++) {
+      spawnPacket();
+    }
+
+    aurora = [];
+    for (var k = 0; k < AURORA_COUNT; k++) {
+      aurora.push({
+        cx: rand(W * 0.1, W * 0.9),
+        cy: rand(H * 0.1, H * 0.6),
+        rx: rand(200, 380),
+        ry: rand(60, 120),
+        opacity: rand(0.025, 0.055),
+        speed: rand(0.0003, 0.0007),
+        phase: rand(0, Math.PI * 2)
+      });
+    }
+  }
+
+  function spawnPacket() {
+    var fromIdx = Math.floor(Math.random() * nodes.length);
+    var toIdx;
+    var best = Infinity;
+    var from = nodes[fromIdx];
+    for (var i = 0; i < nodes.length; i++) {
+      if (i === fromIdx) continue;
+      var d = Math.hypot(nodes[i].x - from.x, nodes[i].y - from.y);
+      if (d < best && d < CONNECT_DIST + 40) { best = d; toIdx = i; }
+    }
+    if (toIdx === undefined) toIdx = (fromIdx + 1) % nodes.length;
+    packets.push({
+      from: fromIdx, to: toIdx,
+      t: 0,
+      speed: rand(0.0008, 0.0022),
+      size: rand(1.5, 2.5)
+    });
+  }
+
+  function drawAurora(o, t) {
+    var phase = o.phase + t * o.speed;
+    var gx = o.cx + Math.sin(phase * 0.7) * 60;
+    var gy = o.cy + Math.cos(phase * 0.5) * 30;
+    var g = octx.createRadialGradient(gx, gy, 0, gx, gy, o.rx);
+    g.addColorStop(0, 'rgba(79,142,247,' + o.opacity + ')');
+    g.addColorStop(0.5, 'rgba(79,142,247,' + (o.opacity * 0.3) + ')');
+    g.addColorStop(1, 'rgba(0,0,0,0)');
+    octx.save();
+    octx.translate(gx, gy);
+    octx.scale(1, o.ry / o.rx);
+    octx.translate(-gx, -gy);
+    octx.beginPath();
+    octx.arc(gx, gy, o.rx, 0, Math.PI * 2);
+    octx.fillStyle = g;
+    octx.fill();
+    octx.restore();
+  }
+
+  function draw(ts) {
+    var dt = Math.min(ts - last, 50);
+    last = ts;
+
+    octx.clearRect(0, 0, W, H);
+
+    // Grid
+    octx.strokeStyle = 'rgba(255,255,255,0.018)';
+    octx.lineWidth = 0.5;
+    var GRID = 60;
+    for (var gx = 0; gx < W; gx += GRID) {
+      octx.beginPath(); octx.moveTo(gx, 0); octx.lineTo(gx, H); octx.stroke();
+    }
+    for (var gy = 0; gy < H; gy += GRID) {
+      octx.beginPath(); octx.moveTo(0, gy); octx.lineTo(W, gy); octx.stroke();
+    }
+
+    // Aurora
+    aurora.forEach(function(a) { drawAurora(a, ts); });
+
+    // Connections
+    for (var i = 0; i < nodes.length; i++) {
+      for (var j = i + 1; j < nodes.length; j++) {
+        var dx = nodes[i].x - nodes[j].x;
+        var dy = nodes[i].y - nodes[j].y;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < CONNECT_DIST) {
+          var alpha = (1 - dist / CONNECT_DIST) * 0.12;
+          octx.beginPath();
+          octx.moveTo(nodes[i].x, nodes[i].y);
+          octx.lineTo(nodes[j].x, nodes[j].y);
+          octx.strokeStyle = 'rgba(79,142,247,' + alpha + ')';
+          octx.lineWidth = 0.5;
+          octx.stroke();
+        }
+      }
+    }
+
+    // Nodes
+    nodes.forEach(function(n) {
+      n.pulse += n.pulseSpeed * dt;
+      n.x += n.vx * dt * 0.5;
+      n.y += n.vy * dt * 0.5;
+      if (n.x < 0 || n.x > W) n.vx *= -1;
+      if (n.y < 0 || n.y > H) n.vy *= -1;
+      n.x = Math.max(0, Math.min(W, n.x));
+      n.y = Math.max(0, Math.min(H, n.y));
+
+      var pulse = (Math.sin(n.pulse) + 1) / 2;
+      var alpha = n.active ? 0.5 + pulse * 0.4 : 0.15 + pulse * 0.1;
+
+      // Ring
+      if (n.active) {
+        octx.beginPath();
+        octx.arc(n.x, n.y, n.r + 4 + pulse * 3, 0, Math.PI * 2);
+        octx.strokeStyle = 'rgba(79,142,247,' + (pulse * 0.15) + ')';
+        octx.lineWidth = 0.5;
+        octx.stroke();
+      }
+
+      // Core
+      octx.beginPath();
+      octx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      octx.fillStyle = 'rgba(79,142,247,' + alpha + ')';
+      octx.fill();
+
+      // Cross marker for active nodes
+      if (n.active && n.r > 2.5) {
+        octx.beginPath();
+        var cs = n.r + 3;
+        octx.moveTo(n.x - cs, n.y); octx.lineTo(n.x + cs, n.y);
+        octx.moveTo(n.x, n.y - cs); octx.lineTo(n.x, n.y + cs);
+        octx.strokeStyle = 'rgba(79,142,247,' + (alpha * 0.5) + ')';
+        octx.lineWidth = 0.5;
+        octx.stroke();
+      }
+    });
+
+    // Packets
+    packets = packets.filter(function(p) { return p.t <= 1; });
+    while (packets.length < PACKET_COUNT) { spawnPacket(); }
+
+    packets.forEach(function(p) {
+      p.t += p.speed * dt;
+      if (p.t > 1) return;
+      var fn = nodes[p.from], tn = nodes[p.to];
+      if (!fn || !tn) return;
+      var px = fn.x + (tn.x - fn.x) * p.t;
+      var py = fn.y + (tn.y - fn.y) * p.t;
+      octx.beginPath();
+      octx.arc(px, py, p.size, 0, Math.PI * 2);
+      octx.fillStyle = 'rgba(255,255,255,0.75)';
+      octx.fill();
+      // Trail
+      var trail = Math.min(p.t, 0.08);
+      var tx2 = fn.x + (tn.x - fn.x) * (p.t - trail);
+      var ty2 = fn.y + (tn.y - fn.y) * (p.t - trail);
+      var gr = octx.createLinearGradient(tx2, ty2, px, py);
+      gr.addColorStop(0, 'rgba(79,142,247,0)');
+      gr.addColorStop(1, 'rgba(79,142,247,0.35)');
+      octx.beginPath();
+      octx.moveTo(tx2, ty2);
+      octx.lineTo(px, py);
+      octx.strokeStyle = gr;
+      octx.lineWidth = 0.75;
+      octx.stroke();
+    });
+
+    ctx.clearRect(0, 0, W, H);
+    ctx.drawImage(offscreen, 0, 0, W * dpr, H * dpr, 0, 0, W, H);
+
+    if (visible) animId = requestAnimationFrame(draw);
+  }
+
+  function start() {
+    if (!animId) { last = performance.now(); animId = requestAnimationFrame(draw); }
+  }
+  function stop() {
+    if (animId) { cancelAnimationFrame(animId); animId = null; }
+  }
+
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      visible = e.isIntersecting;
+      if (visible) start(); else stop();
+    });
+  }, { threshold: 0 });
+  io.observe(hero);
+
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) stop(); else if (visible) start();
+  });
+
+  window.addEventListener('resize', function() {
+    stop();
+    clearTimeout(window._rsz);
+    window._rsz = setTimeout(function() { resize(); if (visible) start(); }, 150);
+  });
+
+  resize();
+  start();
+})();
+
+})();
+</script>
+
+
+<div id="chrome-extension-boilerplate-react-vite-content-view-root"><template shadowrootmode="open"><div id="shadow-root"></div></template></div></body></html>
