@@ -2,6 +2,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+  // Prevent the browser from restoring a previous scroll position on
+  // reload/re-open. Without this, Chrome can re-open the page scrolled
+  // to wherever it was last left (e.g. the Contact section) instead of
+  // starting at the top.
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+</script>
  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1642,8 +1651,64 @@ reveals.forEach(function(el) { revealObserver.observe(el); });
 })();
 
 })();
+
+/* ── CLEAN URL NAVIGATION ────────────────────────────────────────────
+   Prevents the browser from appending #philosophy, #what-i-build, etc.
+   to the address bar. Scrolls to the target section manually and keeps
+   the URL as heriyanaqtink.com (no hash). */
+(function() {
+  var navbar = document.getElementById('navbar');
+
+  function getOffset() {
+    return navbar ? navbar.offsetHeight : 60;
+  }
+
+  function handleNavClick(e) {
+    var link = e.currentTarget;
+    var href = link.getAttribute('href') || '';
+    if (href.charAt(0) !== '#' || href.length < 2) return;
+
+    var target = document.querySelector(href);
+    if (!target) return;
+
+    e.preventDefault();
+
+    var top = target.getBoundingClientRect().top + window.pageYOffset - getOffset();
+    window.scrollTo({ top: top, behavior: 'smooth' });
+
+    // Keep the address bar clean on heriyanaqtink.com (no #hash)
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  }
+
+  var navLinks = document.querySelectorAll('#navbar a[href^="#"], #mobile-menu a[href^="#"], .mobile-menu a[href^="#"], nav a[href^="#"]');
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', handleNavClick);
+  });
+
+  // If the page loads with a stale hash (e.g. from an old shared link),
+  // scroll to that section once, then strip the hash from the URL.
+  if (window.location.hash) {
+    var initial = document.querySelector(window.location.hash);
+    if (initial) {
+      window.addEventListener('load', function() {
+        var top = initial.getBoundingClientRect().top + window.pageYOffset - getOffset();
+        window.scrollTo({ top: top, behavior: 'auto' });
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
+      });
+    }
+  } else {
+    // Normal load / reload with no hash: always start at the top,
+    // overriding any browser-remembered scroll position.
+    window.addEventListener('load', function() {
+      window.scrollTo(0, 0);
+    });
+  }
+})();
 </script>
 
 
-<div id="chrome-extension-boilerplate-react-vite-content-view-root"><template shadowrootmode="open"><div id="shadow-root"></div></template></div><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"046df781db404c9b869d4087bfc5efff","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-</body></html>
+<div id="chrome-extension-boilerplate-react-vite-content-view-root"><template shadowrootmode="open"><div id="shadow-root"></div></template></div></body></html>
